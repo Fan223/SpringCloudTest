@@ -1,0 +1,23 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 124.222.118.90:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true # 开启从注册中心动态创建路由的功能, 利用微服务名进行路由
+      routes:
+        - id: service1 # 路由的ID, 没有固定规则但要求唯一, 建议配合服务名
+          uri: lb://service  # 匹配提供服务的路由地址
+          # 网关断言匹配
+          predicates:
+            - Path=/user/**    # 路径相匹配的进行路由
+        - id: service2
+          uri: lb://service
+          predicates:
+            - Path=/user/**
