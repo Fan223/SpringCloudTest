@@ -1,0 +1,18 @@
+server:
+  port: 7000
+spring:
+  application:
+    name: consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 124.222.118.90:8848
+feign:
+  client:
+    config:
+      default:
+        # \u65E5\u5FD7\u7EA7\u522B
+        logger-level: full
+        # \u8D85\u65F6\u8BBE\u7F6E 1.5 \u79D2\u8D85\u65F6
+        connect-timeout: 1500
+        read-timeout: 1500
