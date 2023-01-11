@@ -10,9 +10,9 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>consumer-1</artifactId>
+    <artifactId>consumer-openfeign</artifactId>
 
-    <name>consumer-1</name>
+    <name>consumer-openfeign</name>
 
     <dependencies>
         <dependency>
