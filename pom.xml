@@ -19,6 +19,8 @@
         <module>provider-1</module>
         <module>provider-2</module>
         <module>consumer-openfeign</module>
+        <module>provider-hystrix</module>
+        <module>consumer-hystrix-dashboard</module>
     </modules>
 
     <name>SpringCloudTest</name>

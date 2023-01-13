@@ -1,5 +1,6 @@
 package fan.service;
 
+import fan.service.impl.FallbackServiceImpl;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @author Fan
  * @since 2023/1/11 15:32
  */
-@FeignClient("provider")
+@FeignClient(value = "provider-hystrix", fallback = FallbackServiceImpl.class)
 public interface FeignService {
 
     /**
@@ -19,6 +20,6 @@ public interface FeignService {
      * @author Fan
      * @since 2023/1/11 17:09
      */
-    @GetMapping("/user/get")
+    @GetMapping("/timeout")
     String get();
 }
