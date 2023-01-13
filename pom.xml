@@ -21,6 +21,7 @@
         <module>consumer-openfeign</module>
         <module>provider-hystrix</module>
         <module>consumer-hystrix-dashboard</module>
+        <module>nacos-discovery-config</module>
     </modules>
 
     <name>SpringCloudTest</name>
